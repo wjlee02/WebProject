@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #e66465, #9198e5);
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h4 {
+            margin: 10px 0;
+        }
+
+        h5 {
+            margin: 5px 0;
+            color: #1f1a35;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 14px;
+            color: #1f1a35;
+            line-height: 20px;
+        }
+
+        .container {
+            background-color: white;
+            width: 350px;
+            margin-top: 15rem;
+            margin-bottome : 100px;
+            color: #e65b00;
+            padding-top: 30px;
+            border-radius: 5px;
+            position: relative;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.80);
+        }
+
+        .container .round {
+            width: 130px;
+            border-radius: 50%;
+            border: 1px solid #000;
+        }
+
+        .a {
+            font-family: sans-serif;
+        }
+
+
+        .skills {
+
+            padding: 1rem;
+            margin-top: 2rem;
+            text-align: left;
+            background-color: #1F1A36;
+            border-radius: 0px 0px 10px 10px;
+        }
+
+        .skills h5 {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        hr {
+            height: 0.5px;
+            margin: 10px 0;
+            background-color: #fff;
+        }
+
+        .skills ul li {
+            color: #fff;
+            padding: 7px;
+            font-size: 12px;
+            margin: 0 7px 7px 0;
+            display: inline-block;
+            border: 1px solid #b7b6be;
+        }
+
+        header {
+            height: 75px;
+            background-color: #262626;
+            border: 1px solid #253342;
+            position: fixed;
+            width: 100%;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+        }
+
+        h1 {
+            color: white;
+            line-height: 75px;
+            text-align: center;
+        }
+
+        .menu {}
+
+        .menu li {}
+
+        .menu a {
+            line-height: 75px;
+            color: white;
+            padding: 0 15px;
+            display: block;
+        }
+
+        .wrapper {
+            width: 1170px;
+            margin: 0 auto;
+        }
+
+        .clearfix {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        h1 {
+            color: white;
+            line-height: 75px;
+            float: left;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .menu {
+            float: left;
+        }
+
+        .menu li {
+            float: left;
+        }
+
+        .menu a {
+            line-height: 75px;
+            color: white;
+            padding: 0 15px;
+        }
+
+        .menu1 {
+            float: right;
+        }
+
+        .menu1 li {
+            float: left;
+        }
+
+        .menu1 a {
+            line-height: 75px;
+            color: white;
+            padding: 0 15px;
+        }
+
+        .login-box {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .hidden-button {
+            display: inline-block;
+            border: none;
+            background: none;
+            color: inherit;
+            font: inherit;
+            cursor: pointer;
+            outline: inherit;
+            text-decoration: none;
+            color: inherit;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #BECDFF;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .hidden-button:hover {
+            background-color: #B4E5FF;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="wrapper">
+            <h1><img src="{{ url_for('static', filename='img/cupid_logo.jpg') }}" style="width: 55px; height: 50px;" alt="Logo"></h1>
+            <nav>
+                <ul class="menu">
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('servide') }}">Service</a></li>
+                    <li><a href="{{ url_for('guide') }}">Guide</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <ul class="menu1">
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+    {% if session.user_email %}
+    <img class = round src="{{ url_for('static', filename='img/' + user_profile.image_url.replace("\\", "/")) }}" alt="Profile Image">
+
+
+    <h4>Name : {{ user_profile.name }}</h4>
+    <p>Age : {{ user_profile.age }}</p>
+    <p>Sex : {{ user_profile.sex }}</p>
+    <p>height : {{ user_profile.height }}</p>
+    <p>Orientation : {{ user_profile.orientation }}</p>
+
+    <div class="skills">
+        <h5>Information</h5>
+        <hr>
+        <ul>
+            <li>Body type : {{ user_profile.body_type }}</li>
+            <li>Diet : {{ user_profile.diet }}</li>
+            <hr>
+            <li>Drink frequency : {{ user_profile.drinks }}</li>
+            <hr>
+            <li>Do you take drugs? : {{ user_profile.drugs }}</li>
+            <hr>
+            <li>Education : {{ user_profile.education }} </li>
+            <li>Ethnicity : {{ user_profile.ethnicity }}</li>
+            <hr>
+            <li>Job : {{ user_profile.job }}</li>
+            <li>Pet : {{ user_profile.pets }}</li>
+            <hr>
+            <li>Religion : {{ user_profile.religion}}</li>
+            <li>Smokes : {{ user_profile.smokes }}</li>
+        </ul>
+    </div>
+
+
+    <div class="login-box">
+         <a href="{{ url_for('information') }}" class="hidden-button">Matching</a>
+    </div>
+
+{% else %}
+<p>You are not logged in.</p>
+<a href="{{ url_for('login') }}" class="btn btn-primary">Login</a>
+{% endif %}
+
+
+
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Welcome to my new homepage!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" />
+    <!-- MDB icon -->
+    <link rel="icon" href="img/new-icon.png" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <style>
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+        }
+
+        html {
+            height: 100%;
+        }
+
+
+        body {
+            background: linear-gradient(#e66465, #9198e5);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20;
+        }
+        
+        .title {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .membership-levels {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .membership-level {
+
+            background: #F4F4F4;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .membership-level img {
+            width: 40px;
+            height: 40px;
+        }
+        .membership-level h3 {
+            margin-top: 10px;
+            font-size: 1.5em;
+        }
+        .membership-level ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .membership-level li {
+            margin: 10px 0;
+        }
+        .navbar {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .navbar-nav .nav-link {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .title {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 15px;
+            text-align: center;
+        }
+        th {
+            background-color: #1e1e1e;
+        }
+        td {
+            background-color: #2a2a2a;
+        }
+        .dot {
+            height: 15px;
+            width: 15px;
+            background-color: red;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .dot.gold {
+            background-color: gold;
+        }
+        .dot.silver {
+            background-color: silver;
+        }
+        .dot.white {
+            background-color: white;
+        }
+
+        .custom-container {
+            text-align: center;
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            color: white;
+        }
+
+        header{height: 75px; background-color : #262626; border: 1px solid #253342;
+        position: fixed; width:100%; z-index: 9999; top:0; left:0;}
+        h1{color: white; line-height: 75px; text-align: center;}
+        .menu{}
+        .menu li{}
+        .menu a{line-height: 75px; color: white; padding :0 15px; display: block;}
+        .wrapper{width: 1170px; margin:0 auto;}
+        .clearfix{content: ''; display: block; clear:both;}
+        h1{color: white; line-height:75px;float:left;}
+        ul {
+            list-style-type: none;
+        }
+        .menu{float:left;}
+        .menu li{float:left;}
+        .menu a{line-height:75px; color: white; padding: 0 15px;}
+
+        .menu1{float:right;}
+        .menu1 li{float:left;}
+        .menu1 a{line-height:75px; color: white; padding: 0 15px;}
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- Start your project here-->
+
+    <!--Main Navigation-->
+    <header>
+        <div class="wrapper">
+            <h1><img src="{{ url_for('static', filename='img/cupid_logo.jpg') }}" style="width: 55px; height: 50px;" alt="Logo"></h1>
+            <nav>
+                <ul class="menu">
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('servide') }}">Service</a></li>
+                    <li><a href="{{ url_for('guide') }}">Guide</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <ul class="menu1">
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!--Main Navigation-->
+
+    <br><br><br><br><br>
+    <div class="container">
+        <div class="title" style="color: #000">멤버십 등급</div>
+        <p style="color: #000"> 플러스, 골드, 플래티넘으로 업그레이드하고 더욱 수준 높은 Cupid 기능을 이용해 보세요.</p>
+        <div class="membership-levels">
+            <div class="membership-level" style="color: #000" style="color: #ffooff">
+                <h3 style="color: #ffooff">Cupid Plus</h3>
+                <hr style="border: 0; border-top: 2px solid black; margin: 10px 0;">
+                <ul>
+                    <li >LIKE 무제한</li>
+                    <li>무제한 되돌리기</li>
+                    <li>패스포트로 랜선 세계여행을 떠나 보세요!</li>
+                    <li>광고√숨기기</li>
+                    <li>프로필 비공개 상태로 스와이프하기</li>
+                </ul>
+            </div>
+            <div class="membership-level" style="color: #000">
+                <h3>Cupid Gold</h3>
+                <hr style="border: 0; border-top: 2px solid black; margin: 10px 0;">
+                <ul>
+                    <li>내가 받은 LIKE 보기</li>
+                    <li>매일 오늘의 PICK 추천</li>
+                    <li>1주마다 무료 슈퍼 라이크 5개</li>
+                    <li>매달 무료 부스트 1개</li>
+                    <li>Cupid 플러스의 모든 기능을 기본으로 사용할 수 있어요!</li>
+                </ul>
+            </div>
+            <div class="membership-level" style="color: #000">
+                <h3>Cupid Platinum</h3>
+                <hr style="border: 0; border-top: 2px solid black; margin: 10px 0;">
+                <ul>
+                    <li>매치 전 보내는 슈퍼 메시지</li>
+                    <li>플래티넘 LIKE</li>
+                    <li>내가 보낸 LIKE 보기</li>
+                    <li>Cupid 골드의 모든 기능을 기본으로 사용할 수 있어요!</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <div class="container">
+        <div class="title" style="color: #000">한눈에 보는 멤버십 등급</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>기능</th>
+                    <th>Cupid</th>
+                    <th>Cupid Plus</th>
+                    <th>Cupid Gold</th>
+                    <th>Cupid platinum</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>매치, 채팅, 만남.</td>
+                    <td><span class="dot white"></span></td>
+                    <td><span class="dot red"></span></td>
+                    <td><span class="dot gold"></span></td>
+                    <td><span class="dot silver"></span></td>
+                </tr>
+                <tr>
+                    <td>LIKE 무제한</td>
+                    <td></td>
+                    <td><span class="dot red"></span></td>
+                    <td><span class="dot gold"></span></td>
+                    <td><span class="dot silver"></span></td>
+                </tr>
+                <tr>
+                    <td>무제한 되돌리기</td>
+                    <td></td>
+                    <td><span class="dot red"></span></td>
+                    <td><span class="dot gold"></span></td>
+                    <td><span class="dot silver"></span></td>
+                </tr>
+                <tr>
+                    <td>패스포트로 랜선 세계여행을 떠나 보세요!</td>
+                    <td></td>
+                    <td><span class="dot red"></span></td>
+                    <td><span class="dot gold"></span></td>
+                    <td><span class="dot silver"></span></td>
+                </tr>
+                <tr>
+                    <td>광고 숨기기</td>
+                    <td></td>
+                    <td><span class="dot red"></span></td>
+                    <td><span class="dot gold"></span></td>
+                    <td><span class="dot silver"></span></td>
+                </tr>
+                <tr>
+                    <td>프로필 비공개 상태로 스와이프하기</td>
+                    <td></td>
+                    <td><span class="dot red"></span></td>
+                    <td><span class="dot gold"></span></td>
+                    <td><span class="dot silver"></span></td>
+                </tr>
+                <tr>
+                    <td>*1주마다 무료 슈퍼 라이크 5개</td>
+                    <td></td>
+                    <td></td>
+                    <td><span class="dot gold"></span></td>
+                    <td><span class="dot silver"></span></td>
+                </tr>
+                <tr>
+                    <td>*매달 무료 부스트 1개<br>매월 제공되는 무료 부스트는 1개월 이상 구독하는 분들께만 제공됩니다.</td>
+                    <td></td>
+                    <td></td>
+                    <td><span class="dot gold"></span></td>
+                    <td><span class="dot silver"></span></td>
+                </tr>
+                <tr>
+                    <td>내가 받은 LIKE 보기</td>
+                    <td></td>
+                    <td></td>
+                    <td><span class="dot gold"></span></td>
+                    <td><span class="dot silver"></span></td>
+                </tr>
+                <tr>
+                    <td>매일 오늘의 PICK 추천</td>
+                    <td></td>
+                    <td></td>
+                    <td><span class="dot gold"></span></td>
+                    <td><span class="dot silver"></span></td>
+                </tr>
+                <tr>
+                    <td>플래티넘 LIKE</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><span class="dot silver"></span></td>
+                </tr>
+                <tr>
+                    <td>내가 보낸 LIKE 보기</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><span class="dot silver"></span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div> </div>
+    <br><br><br>
+
+    <!-- footer -->
+    <footer class="bg-dark text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="text-light text-center p-3" style="background-color: rgb(39, 37, 37);">
+            © 2023 Copyright:
+            <a class="text-light" target="_blank" >Cupid</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- footer -->
+
+    <!-- End your project here-->
+
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+</body>
+
+</html>

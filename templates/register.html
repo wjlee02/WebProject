@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" />
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <style>
+        html, body {
+
+            max-width: 1000px
+            height: 100%;
+            margin: 10;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #e66465, #9198e5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-box {
+
+            width: 100%;
+            max-width: 800px;
+            padding: 65px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+            color: #fff;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .login-box h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .user-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .user-box input, .user-box select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            border: none;
+            border-bottom: 1px solid #fff;
+            background: transparent;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .user-box label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 14px;
+            color: #fff;
+            pointer-events: none;
+            transition: 0.5s;
+        }
+
+        .user-box input:focus ~ label,
+        .user-box input:valid ~ label {
+            top: -20px;
+            left: 0;
+            color: #f68e44;
+            font-size: 12px;
+        }
+
+        .radio-group {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .radio-group label {
+            color: #fff;
+        }
+
+        .radio-group input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .btn {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .btn button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #b79726;
+            background: none;
+            border: 2px solid #b79726;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+            position: relative;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .btn button:hover {
+            color: #fff;
+            background: #f49803;
+            border-color: #f49803;
+            box-shadow: 0 0 10px rgba(244, 152, 3, 0.5);
+        }
+
+        .btn button span {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, #f49803);
+            top: -100%;
+            left: -100%;
+            transition: 0.5s;
+            z-index: 1;
+        }
+
+        .btn button:hover span {
+            top: 0;
+            left: 0;
+            background: linear-gradient(45deg, transparent, #f49803);
+        }
+
+        header{height: 75px; background-color : #262626; border: 1px solid #253342;
+        position: fixed; width:100%; z-index: 9999; top:0; left:0;}
+        h1{color: white; line-height: 75px; text-align: center;}
+        .menu{}
+        .menu li{}
+        .menu a{line-height: 75px; color: white; padding :0 15px; display: block;}
+        .wrapper{width: 1170px; margin:0 auto;}
+        .clearfix{content: ''; display: block; clear:both;}
+        h1{color: white; line-height:75px;float:left;}
+        ul {
+            list-style-type: none;
+        }
+        .menu{float:left;}
+        .menu li{float:left;}
+        .menu a{line-height:75px; color: white; padding: 0 15px;}
+
+        .menu1{float:right;}
+        .menu1 li{float:left;}
+        .menu1 a{line-height:75px; color: white; padding: 0 15px;}
+
+        select option {
+            color: #000; 
+        }
+        .image-box {
+            margin-bottom: 20px;
+        }
+
+        .image-box input[type="file"] {
+            display: none;
+        }
+
+        .image-box label {
+            display: block;
+            cursor: pointer;
+            color: #fff;
+            background-color: #f49803;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .image-box label:hover {
+            background-color: #e66465;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <h1><img src="{{ url_for('static', filename='img/cupid_logo.jpg') }}" style="width: 55px; height: 50px;" alt="Logo"></h1>
+            <nav>
+                <ul class="menu">
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('servide') }}">Service</a></li>
+                    <li><a href="{{ url_for('guide') }}">Guide</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <ul class="menu1">
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <div class="login-box"><br><br>
+        <h2>회원가입</h2>
+        <form method="POST" action="{{ url_for('register') }}" enctype="multipart/form-data">
+            <div class="user-box">
+                <input type="email" name="email" required />
+                <label>* Email</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="name" required />
+                <label>* Name</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="password" required />
+                <label>* Password</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="age" required />
+                <label>* Age</label>
+            </div>
+            <div class="user-box">
+                <input type="text" id="height" name="height" required />
+                <label>* Height</label>
+            </div>
+            <div class="radio-group">
+                <label>*Sex </label><br>
+                <input type="radio" name="sex" value="male" required /> Male
+                <input type="radio" name="sex" value="female" required /> Female
+            </div>
+            <div class="radio-group">
+                <label>*Orientation &emsp;</label><br>
+                <input type="radio" name="orientation" value="straight" required /> Straight&ensp;
+                <input type="radio" name="orientation" value="gay" required /> Gay&ensp;
+                <input type="radio" name="orientation" value="bisexual" required /> Bisexual
+            </div>
+            <div class="user-box">
+                <select name="body_type" required>
+                    <option value="" disabled selected>* Body Type</option>
+                    <option value="fit">Fit</option>
+                    <option value="avg">Average</option>
+                    <option value="skinny">Skinny</option>
+                    <option value="big">Big</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="user-box">
+                <select name="diet" required>
+                    <option value="" disabled selected>* Diet</option>
+                    <option value="anything">Anything</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="kosher">Kosher</option>
+                    <option value="halal">Halal</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="user-box">
+                <select name="drinks" required>
+                    <option value="" disabled selected>* Drink Frequency</option>
+                    <option value="socially">Socially</option>
+                    <option value="rarely">Rarely</option>
+                    <option value="often">Often</option>
+                    <option value="not at all">Not at all</option>
+                    <option value="very often">Very often</option>
+                    <option value="desperately">Desperately</option>
+                    <option value="unknown">Unknown</option>
+                </select>
+            </div>
+            <div class="user-box">
+                <select name="drugs" required>
+                    <option value="" disabled selected>* Do you take drugs?</option>
+                    <option value="never">Never</option>
+                    <option value="sometimes">Sometimes</option>
+                    <option value="often">Often</option>
+                    <option value="unknown">Unknown</option>
+                </select>
+            </div>
+            <div class="user-box">
+                <select name="education" required>
+                    <option value="" disabled selected>* Education</option>
+                    <option value="university">University</option>
+                    <option value="masters degree">Masters Degree</option>
+                    <option value="college">College</option>
+                    <option value="ph.d">Ph.D</option>
+                    <option value="space camp">Space Camp</option>
+                    <option value="high school">High School</option>
+                    <option value="law school">Law School</option>
+                    <option value="med school">Med School</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+
+            <div class="user-box">
+                <select id="ethnicity" name="ethnicity" required>
+                    <option value="" disabled selected>* Ethnicity</option>
+                    <option value="white">White</option>
+                    <option value="asian">Asian</option>
+                    <option value="hispanic / latin">Hispanic / Latin</option>
+                    <option value="black">Black</option>
+                    <option value="indian">Indian</option>
+                    <option value="middle eastern">Middle Eastern</option>
+                    <option value="native american">Native American</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+
+            <div class="user-box">
+                <select id="job" name="job" required>
+                    <option value="" disabled selected>* Job</option>
+                    <option value="science">Science</option>
+                    <option value="student">Student</option>
+                    <option value="computer">Computer</option>
+                    <option value="artistic">Artistic</option>
+                    <option value="sales">Sales</option>
+                    <option value="medicine">Medicine</option>
+                    <option value="education">Education</option>
+                    <option value="executive">Executive</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="banking">Banking</option>
+                    <option value="hospitality">Hospitality</option>
+                    <option value="law">Law</option>
+                    <option value="construction">Construction</option>
+                    <option value="clerical">Clerical</option>
+                    <option value="political">Political</option>
+                    <option value="transportation">Transportation</option>
+                    <option value="retired">Retired</option>
+                    <option value="military">Military</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="user-box">
+                <select id="pets" name="pets" required>
+                    <option value="" disabled selected>* Pet</option>
+                    <option value="likes both">Likes Both</option>
+                    <option value="dog person">Dog Person</option>
+                    <option value="cat person">Cat Person</option>
+                    <option value="dislikes both">Dislikes Both</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+                <div class="user-box">
+                    <select id="religion" name="religion" required>
+                        <option value="" disabled selected>* Religion</option>
+                        <option value="agnosticism">Agnosticism</option>
+                        <option value="atheism">Atheism</option>
+                        <option value="christianity">Christianity</option>
+                        <option value="catholicism">Catholicism</option>
+                        <option value="judaism">Judaism</option>
+                        <option value="buddhism">Buddhism</option>
+                        <option value="hinduism">Hinduism</option>
+                        <option value="islam">Islam</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="user-box">
+                    <select id="smokes" name="smokes" required>
+                        <option value="" disabled selected>* Smoke</option>
+                        <option value="no">No</option>
+                        <option value="sometimes">Sometimes</option>
+                        <option value="when drinking">When Drinking</option>
+                        <option value="yes">Yes</option>
+                        <option value="trying to quit">Trying to Quit</option>
+                        <option value="unknown">Unknown</option>
+                    </select>
+                </div>
+                <div class="image-box">
+                    <input type="file" name="profile_image" id="profile_image" accept="image/*" required />
+                    <label for="profile_image">* Upload Profile Image</label>
+                </div>
+                <div class="btn">
+                    <button type="submit">가입하기</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

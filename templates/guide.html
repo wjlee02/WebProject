@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Welcome to my new homepage!</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" />
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background: #FFFFFF;
+        }
+
+        .navbar-nav .nav-link {
+            color: white !important;
+            margin-right: 10px;
+        }
+
+        .navbar-dark .navbar-toggler-icon {
+            filter: invert(1);
+        }
+
+        .navbar-dark .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: white;
+        }
+
+        .custom-navbar {
+            background-color: #212529;
+        }
+
+        .btn-primary {
+            background-color: #ff3b30;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #e62b21;
+        }
+
+        .custom-container {
+            text-align: center;
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            color: white;
+        }
+
+        header {
+            height: 75px;
+            background-color: #262626;
+            border: 1px solid #253342;
+            position: fixed;
+            width: 100%;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+        }
+
+        h1 {
+            color: white;
+            line-height: 75px;
+            text-align: center;
+        }
+
+        .menu {}
+
+        .menu li {}
+
+        .menu a {
+            line-height: 75px;
+            color: white;
+            padding: 0 15px;
+            display: block;
+        }
+
+        .wrapper {
+            width: 1170px;
+            margin: 0 auto;
+        }
+
+        .clearfix {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        h1 {
+            color: white;
+            line-height: 75px;
+            float: left;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .menu {
+            float: left;
+        }
+
+        .menu li {
+            float: left;
+        }
+
+        .menu a {
+            line-height: 75px;
+            color: white;
+            padding: 0 15px;
+        }
+
+        .menu1 {
+            float: right;
+        }
+
+        .menu1 li {
+            float: left;
+        }
+
+        .menu1 a {
+            line-height: 75px;
+            color: white;
+            padding: 0 15px;
+        }
+
+        /* Centering elements */
+        .centered-content {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .centered-content img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .centered-content .Cupid-container {
+            display: inline-block;
+            text-align: left;
+        }
+
+        .Cupid-container h1,
+        .Cupid-container h2,
+        .Cupid-container p {
+            text-align: center;
+        }
+
+        /* Left-aligning content within centered-content */
+        .left-align-content {
+            text-align: left;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Start your project here-->
+    <!--Main Navigation-->
+    <header>
+        <div class="wrapper">
+            <h1><img src="{{ url_for('static', filename='img/cupid_logo.jpg') }}" style="width: 55px; height: 50px;" alt="Logo"></h1>
+            <nav>
+                <ul class="menu">
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('servide') }}">Service</a></li>
+                    <li><a href="{{ url_for('guide') }}">Guide</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <ul class="menu1">
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!--Main Navigation-->
+
+    <!-- Main Content -->
+    <div class="container centered-content"><br>
+        <!-- Section: Posts -->
+        <section class="my-3 text-center">
+            <h4 class="text-center py-3 text-decoration-underline">Guide Line</h4>
+        </section>
+        <br/>
+
+        <h1 style="color: #000; text-align: center;" >안전한 데이트를 위한 도움말</h1>
+<br><br><br><br>
+        <div class="left-align-content">
+            <p>새로운 사람들을 만나는 건 언제나 설레는 일입니다. 하지만 아직 잘 알지 못하는 누군가와 소통할 때는 항상 주의하셔야 합니다. 처음 메시지를 주고받을 때, 또는 직접 만날 때 회원님의 안전을 최우선으로 생각하여 판단하세요. 타인의 행동은 통제할 수 없지만, 회원님이 안전하게 Cupid를 이용하시는 데 유용한 몇 가지의 팁이 있습니다. </p>
+            <br/>
+            <h1 style="color: #000">I. 온라인 안전</h1><br><br><br>
+            <ul><br>
+                <li>절대로 돈을 보내거나 금융 정보를 공유하지 마세요
+                    상대방이 긴급한 상황이라고 주장하더라도 특히 계좌이체 방식으로 절대 돈을 보내지 마세요. 계좌이체는 현금을 보내는 것과 같습니다. 즉, 거래를 취소하거나 돈이 어디로 이체되었는지 추적하는 것이 거의 불가능합니다. 회원님의 금융 계좌를 이용하는 데 필요한 정보를 절대로 공유하지 마세요. 다른 회원이 돈을 요구한다면 Cupid로 바로 신고하세요.
+                </li>
+                <li>회원님의 개인정보를 지키세요
+                    주민등록번호, 집이나 직장 주소, 월요일마다 특정한 헬스장을 방문한다든가 하는 자세한 일상을 포함한 개인정보를 모르는 사람에게 절대로 공유하지 마세요. 회원님에게 자녀가 있다면, 충분한 대화를 나누기 전까지는 프로필상에 너무 많은 자녀의 정보를 올리지 않도록 주의하세요. 자녀의 이름과 학교, 나이, 성별 등 상세한 정보는 공개하지 않는 것이 안전합니다.
+                </li>
+                <li>
+                    장거리 및 해외 관계를 주의하세요
+                    회원님과 같은 국가의 사람이지만 어딘가에 갇혀 있다고 주장하는 사기꾼들을 주의하세요. 특히 이들이 귀국하기 위해 금전적인 도움을 요청한다면 더욱 경계하시기 바랍니다. 사용자가 직접 만나거나, 전화/영상 통화로 대화하는 것을 꺼릴 때도 조심하셔야 합니다. 상대방은 신원을 도용하고 있을 수 있습니다. 누군가가 직접 만나거나 회원님을 알아가기 전 진지한 관계를 강요하거나, 회원님의 질문을 피한다면, 이 역시 적신호로 생각하시기 바랍니다.
+                </li>
+            </ul>
+            <br/>
+            <h1 style="color: #000">II. 직접 만나는 경우</h1><br><br><br>
+            <ul>
+                <li><br/>
+                    서두르지 마세요
+                    직접 만나거 Cupid 이외의 플랫폼에서 채팅하기 전, 충분히 시간을 가지고 상대방을 알아가세요. 질문하는 걸 주저하지 마세요. 이를 통해 위험한 사람 또는 개인적으로 맞지 않는 사람을 가려내실 수 있습니다. 또한, 만나기 전 전화 또는 영상 통화가 유용한 검열 도구가 될 수 있습니다.
+                </li>
+                <li>
+                    공공장소에서 데이트하세요<br/>
+                    처음 몇 번은 사람들로 북적이는 공공장소에서 만나세요. 절대 회원님의 집이나 데이트 상대의 집을 포함한 사적인 장소를 만날 장소로 선택하지 마세요. 만약 데이트 상대가 사적인 장소로 갈 것을 강요한다면 데이트를 끝내세요.
+                </li>
+                <li>
+                    가족과 친구에게 자신의 일정을 알리세요<br/>
+                    가족이나 친구에게 회원님이 언제 어디로 가는지 일정을 알려주세요. 그리고 휴대폰을 충전하고 항상 직접 소지하세요.
+                </li>
+                <li>
+                    교통편은 스스로 관리하세요<br/>
+                    원할 때 언제든지 떠날 수 있도록 데이트 장소로 가고, 집으로 올 때 이용하는 교통편을 스스로 준비하시길 바랍니다. 만약 직접 운전한다면 라이드 셰어링 앱이나 데리러 와 줄 수 있는 친구 등 대안을 마련해두는 것이 좋습니다.
+                    자신의 한계를 파악하세요
+                </li>
+                <li>
+                    약이나 술이 회원님에게 미치는 영향에 유의하세요.<br/>
+                    약과 술로 판단력과 주의력이 흐려질 수 있습니다. 데이트 상대가 회원님의 한계 이상으로 약 또는 술을 강요한다면 자신의 태도를 고수하고 데이트를 끝내세요.
+                    음료나 개인 물품을 방치하지 마세요
+                </li>
+                <li>
+                    자신의 음료가 어디에서 전해졌는지, 그리고 어디에 있는지 항상 확인하세요.<br/>
+                    바텐더나 서버가 직접 따르거나 제공한 음료만 이용하세요. 사람들이 성폭력을 의도하여 음료에 몰래 타는 많은 약물은 향이나 색이 없으며 맛이 느껴지지 않습니다. 또한, 항상 휴대폰과 지갑, 개인정보를 포함한 모든 물품을 직접 소지하세요.
+                    불편하게 느껴진다면, 데이트 장소를 떠나세요
+                    불편하게 느껴 데이트를 일찍 마치는 것은 물론 괜찮습니다. 오히려 이는 권장 사항이기도 합니다. 본능적으로 무언가 이상하거나 안전하지 않다는 생각이 든다면 바텐더나 서버에게 도움을 요청하세요.
+                </li>
+            </ul>
+        </div>
+        <br><br>
+        <!-- Section: Posts -->
+
+        <!-- Pagination posts -->
+
+        <!-- Pagination posts -->
+    </div>
+
+    <!-- footer -->
+    <footer class="bg-dark text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="text-light text-center p-3" style="background-color: rgb(39, 37, 37);">
+            © 2023 Copyright:
+            <a class="text-light" target="_blank">Cupid</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- footer -->
+
+    <!-- End your project here-->
+
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js"></script>
+</body>
+
+</html>

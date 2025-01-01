@@ -1,0 +1,246 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #e66465, #9198e5);
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 50px;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            background-color: white;
+            width: 250px;
+            margin: 1rem;
+            color: #e65b00;
+            padding: 35px;
+            border-radius: 5px;
+            position: relative;
+            text-align: center;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.80);
+        }
+
+        h4 {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        p {
+            font-size: 12px;
+            color: #1f1a35;
+            line-height: 18px;
+        }
+
+        .round {
+            width: 80px;
+            border-radius: 50%;
+            border: 1px solid #000;
+        }
+
+        .skills {
+            padding: 0.5rem;
+            margin-top: 0rem;
+            text-align: left;
+            background-color: #1F1A36;
+            border-radius: 0px 0px 10px 10px;
+            margin-left: -30px;
+            margin-right: -30px;
+            box-sizing: border-box;
+        }
+
+        .skills h5 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        hr {
+            height: 0.5px;
+            margin: 10px 0;
+            background-color: #fff;
+        }
+
+        .skills ul li {
+            color: #fff;
+            padding: 5px;
+            font-size: 10px;
+            margin: 0 5px 5px 0;
+            display: inline-block;
+            border: 1px solid #b7b6be;
+        }
+
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .profile-container {
+            margin-top: 50px;
+        }
+        header{height: 75px; background-color : #262626; border: 1px solid #253342;
+        position: fixed; width:100%; z-index: 9999; top:0; left:0;}
+        h1{color: white; line-height: 75px; text-align: center;}
+        .menu{}
+        .menu li{}
+        .menu a{line-height: 75px; color: white; padding :0 15px; display: block;}
+        .wrapper{width: 1170px; margin:0 auto;}
+        .clearfix{content: ''; display: block; clear:both;}
+        h1{color: white; line-height:75px;float:left;}
+        ul {
+            list-style-type: none;
+        }
+        .menu{float:left;}
+        .menu li{float:left;}
+        .menu a{line-height:75px; color: white; padding: 0 15px;}
+
+        .menu1{float:right;}
+        .menu1 li{float:left;}
+        .menu1 a{line-height:75px; color: white; padding: 0 15px;}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="wrapper">
+            <h1><img src="{{ url_for('static', filename='img/cupid_logo.jpg') }}" style="width: 55px; height: 50px;" alt="Logo"></h1>
+            <nav>
+                <ul class="menu">
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('servide') }}">Service</a></li>
+                    <li><a href="{{ url_for('guide') }}">Guide</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <ul class="menu1">
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="profile-section">
+
+        <div class="container profile-container">
+            <p>My profile</p>
+            <img class="round" src="{{ url_for('static', filename='img/' + user_profile.image_url.replace("\\", "/")) }}" alt="Profile Image">
+            <h4>Name: {{ user_profile.name }}</h4>
+            <p>Age: {{ user_profile.age }}</p>
+            <p>Sex: {{ user_profile.sex }}</p>
+            <p>Height: {{ user_profile.height }}</p>
+            <p>Orientation: {{ user_profile.orientation }}</p>
+
+            <div class="skills">
+                <h5>Information</h5>
+                <hr>
+                <ul>
+                    <li>Body type: {{ user_profile.body_type }}</li>
+                    <li>Diet: {{ user_profile.diet }}</li>
+                    <hr>
+                    <li>Drink frequency: {{ user_profile.drinks }}</li>
+                    <hr>
+                    <li>Do you take drugs?: {{ user_profile.drugs }}</li>
+                    <hr>
+                    <li>Education: {{ user_profile.education }}</li>
+                    <li>Ethnicity: {{ user_profile.ethnicity }}</li>
+                    <hr>
+                    <li>Job: {{ user_profile.job }}</li>
+                    <li>Pet: {{ user_profile.pets }}</li>
+                    <hr>
+                    <li>Religion: {{ user_profile.religion }}</li>
+                    <li>Smokes: {{ user_profile.smokes }}</li>
+                </ul>
+            </div>
+            <a href="{{ url_for('logout') }}" class="btn btn-danger mt-3">Logout</a>
+        </div>
+        <br>
+        <div style="font: bold italic;">Similar profile</div>
+
+        <div class="profile-grid">
+            {% for profile in profiles %}
+                <div class="container profile-container">
+                    <img class="round" src="{{ url_for('static', filename='img/female' + loop.index|string + '.jpeg') if profile.sex == 'f' else url_for('static', filename='img/male' + loop.index|string + '.jpeg') }}" alt="Profile Picture" style="width: 120px; height: 120px;" />
+                    <p>Age: {{ profile.age }}</p>
+                    <p>Sex: {{ 'Female' if profile.sex == 'f' else 'Male' }}</p>
+                    <p>Height: {{ profile.height }}</p>
+                    <p>Orientation: {{ profile.orientation }}</p>
+
+                    <div class="skills">
+                        <h5>Information</h5>
+                        <hr>
+                        <ul>
+                            <li>Body type: {{ profile.body_type }}</li>
+                            <li>Diet: {{ profile.diet }}</li>
+                            <hr>
+                            <li>Drink frequency: {{ profile.drinks }}</li>
+                            <hr>
+                            <li>Do you take drugs?: {{ profile.drugs }}</li>
+                            <hr>
+                            <li>Education: {{ profile.education }}</li>
+                            <li>Ethnicity: {{ profile.ethnicity }}</li>
+                            <hr>
+                            <li>Job: {{ profile.job }}</li>
+                            <li>Pet: {{ profile.pets }}</li>
+                            <hr>
+                            <li>Religion: {{ profile.religion }}</li>
+                            <li>Smokes: {{ profile.smokes }}</li>
+                        </ul>
+                    </div>
+                    <button id="chat-btn-{{ profile._id }}" onclick="openChatWindow('{{ profile._id }}', '{{ profile.name }}')" class="btn btn-primary mt-3">Chat</button>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script>
+        let clickCounts = {};
+
+        function openChatWindow(profileId, profileName) {
+            if (!clickCounts[profileId]) {
+                clickCounts[profileId] = 0;
+            }
+
+            clickCounts[profileId]++;
+
+            if (clickCounts[profileId] <= 5) {
+                window.open(`/chat`, '_blank', 'width=600,height=400');
+            } else {
+                alert("You have reached the maximum number of free chats. Please subscribe to continue.");
+                document.getElementById(`chat-btn-${profileId}`).disabled = true;
+            }
+        }
+    </script>
+</body>
+</html>
+

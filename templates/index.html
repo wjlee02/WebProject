@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Welcome to my new homepage!</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" />
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            margin:0;
+            padding:0;
+            font-family: sans-serif;
+            background: linear-gradient(#e66465, #9198e5);
+        }
+        .navbar-nav .nav-link {
+            color: white !important;
+            margin-right: 10px;
+        }
+        .navbar-dark .navbar-toggler-icon {
+            filter: invert(1);
+        }
+        .navbar-dark .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        .navbar-dark .navbar-nav .nav-link {
+            color: rgba(255, 255, 255, 0.55);
+        }
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: white;
+        }
+        .custom-navbar {
+            background-color: #212529;
+        }
+        .btn-primary {
+            background-color: #ff3b30;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #e62b21;
+        }
+        .custom-container {
+            text-align: center;
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            color: white;
+        }
+
+        header{height: 75px; background-color : #262626; border: 1px solid #253342;
+        position: fixed; width:100%; z-index: 9999; top:0; left:0;}
+        h1{color: white; line-height: 75px; text-align: center;}
+        .menu{}
+        .menu li{}
+        .menu a{line-height: 75px; color: white; padding :0 15px; display: block;}
+        .wrapper{width: 1170px; margin:0 auto;}
+        .clearfix{content: ''; display: block; clear:both;}
+        h1{color: white; line-height:75px;float:left;}
+        ul {
+            list-style-type: none;
+        }
+        .menu{float:left;}
+        .menu li{float:left;}
+        .menu a{line-height:75px; color: white; padding: 0 15px;}
+
+        .menu1{float:right;}
+        .menu1 li{float:left;}
+        .menu1 a{line-height:75px; color: white; padding: 0 15px;}
+
+        /* Centering elements */
+        .centered-content {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .centered-content img {
+            display: block;
+            margin: 0 auto;
+        }
+        .centered-content .Cupid-container {
+            display: inline-block;
+            text-align: left;
+        }
+        .Cupid-container h1, .Cupid-container h2, .Cupid-container p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Start your project here-->
+    <!--Main Navigation-->
+    <header>
+        <div class="wrapper">
+            <h1><img src="{{ url_for('static', filename='img/cupid_logo.jpg') }}" style="width: 55px; height: 50px;" alt="Logo"></h1>
+            <nav>
+                <ul class="menu">
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('servide') }}">Service</a></li>
+                    <li><a href="{{ url_for('guide') }}">Guide</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <ul class="menu1">
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="centered-content">
+        <div style="height: 50px;"></div> <!-- 이 부분이 이미지 위의 공간을 만듭니다 -->
+        <div style="margin-top: 1px;">
+            <img src="{{ url_for('static',filename='img/1414.jpg')}}" width="200" height="300">
+        </div>
+        <br>
+        <div class="Cupid-container">
+            <h2 class="title">매치. 채팅. 만남.</h2>
+            <h2 class="subtitle">Cupid®.</h2>
+            <p class="description">
+                매일 마주하는 일상의 틀을 벗어나 거리에 관계없이<br>
+                다양한 사람들을 만나 보세요. Cupid는 친구를 만<br>
+                들어주는 최고의 경험이 될 거에요. 잘 나온 사진 몇<br>
+                장, 그리고 센스 있는 자기소개만 준비해 주세요!
+            </p>
+        </div>
+
+        <div class="container">
+            <div class="Cupid-container">
+                <h1 class="title">자신과 성향이 비슷한 사람과 채팅하세요!</h1><br>
+                <p class="description">
+                    최대 10명! 맘에 드는 상대를 발견했다면<br>
+                    바로 채팅하세요!<br>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+    <!-- container -->
+    <!-- footer -->
+    <footer class="bg-dark text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="text-light text-center p-3" style="background-color: rgb(39, 37, 37);">
+            © 2023 Copyright:
+            <a class="text-light" target="_blank">Cupid</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- footer -->
+    <!-- End your project here-->
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+</body>
+</html>
